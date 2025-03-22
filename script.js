@@ -56,10 +56,10 @@ function createHeader() {
                     <li><a href="product.html">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown">
                             <li><a href="product.html">ALL Products</a></li>
-                            <li><a href="#">Creatine</a></li>
-                            <li><a href="#">Protine</a></li>
-                            <li><a href="#">Pre-Workout</a></li>
-                            <li><a href="#">Multi-Viamins</a></li>
+                            <li><a href="product.html#Creatine">Creatine</a></li>
+                            <li><a href="product.html#Protine">Protine</a></li>
+                            <li><a href="product.html#Pre-Workout">Pre-Workout</a></li>
+                            <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
                         </ul>
                     </li> 
                     <li><a href="">Contact</a></li>
@@ -117,12 +117,12 @@ function createHeader() {
                     <li><a href="product.html">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown">
                             <li><a href="product.html">ALL Products</a></li>
-                            <li><a href="#">Creatine</a></li>
-                            <li><a href="#">Protine</a></li>
-                            <li><a href="#">Pre-Workout</a></li>
-                            <li><a href="#">Multi-Viamins</a></li>
+                            <li><a href="product.html#Creatine">Creatine</a></li>
+                            <li><a href="product.html#Protine">Protine</a></li>
+                            <li><a href="product.html#Pre-Workout">Pre-Workout</a></li>
+                            <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
                         </ul>
-                    </li> 
+                    </li>
                     <li><a href="">Contact</a></li>
                 </ul>
             </div>
