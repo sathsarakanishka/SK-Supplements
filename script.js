@@ -72,7 +72,7 @@ function createHeader() {
             <div class="mid-nav-right">
                 <ul>
                     <li><a href="#"><i class="fa-solid fa-search" aria-hidden="true"></i></a></li>
-                    <li><a href="Sign up.html"><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="pages/Sign up.html"><i class="fa-solid fa-user"></i></a></li>
                     <li><a href="cart.html" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i>(<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
@@ -111,7 +111,7 @@ function createHeader() {
                         </button>
                     </form>
                 </li>
-                <li><a href="Sign up.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="pages/Sign up.html"><i class="fa-solid fa-user"></i></a></li>
                 <li><a href="cart.html" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i>(<span id="cart-count">0</span>)</a></li>
             </ul>
         </div>
