@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - SK Supplements</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/cart.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-    <header>
-        <h1>Shopping Cart</h1>
-        <a href="index.html">Back to Shop</a>
-    </header>
-
-    <section id="cart-items"></section>
-    <div id="cart-total">
-        <h3>Total: $<span id="total-price">0.00</span></h3>
-        <button onclick="checkout()">Checkout</button>
-    </div>
-
+    <div id="header-container"></div>
+    <main class="cart-page">
+        <h1 class="cart-title">Your Shopping Cart</h1>
+        <a href="index.html" class="back-to-shop">← Continue Shopping</a>
+        <section id="cart-items" class="cart-items-container"></section>
+        <div id="cart-total" class="cart-total-container">
+            <h3>Total: $<span id="total-price">0.00</span></h3>
+            <button onclick="checkout()" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </main>
     <script>
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -29,7 +30,12 @@
             cartItemsDiv.innerHTML = "";
 
             if (cart.length === 0) {
-                cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+                cartItemsDiv.innerHTML = `
+                    <div class="empty-cart">
+                        <p>Your cart is empty.</p>
+                        <img src="images/empty-cart.png" alt="Empty Cart">
+                    </div>
+                `;
                 totalPriceSpan.textContent = "0.00";
                 return;
             }
@@ -39,14 +45,37 @@
                 totalPrice += itemTotal;
                 cartItemsDiv.innerHTML += `
                     <div class="cart-item">
-                        <h3>${item.name}</h3>
-                        <p>Price: $${item.price} | Quantity: ${item.quantity}</p>
-                        <button onclick="removeItem(${index})">Remove</button>
+                        <img src="${item.image}" alt="${item.name}"> <!-- Use the stored image path -->
+                        <div class="cart-item-details">
+                            <h3>${item.name}</h3>
+                            <p>Price: $${item.price} | Quantity: ${item.quantity}</p>
+                            <div class="quantity-controls">
+                                <button onclick="removeOne(${index})" class="remove-one-btn">-1</button>
+                                <button onclick="addOne(${index})" class="add-one-btn">+1</button>
+                            </div>
+                            <button onclick="removeItem(${index})" class="remove-btn">Remove All</button>
+                        </div>
                     </div>
                 `;
             });
 
             totalPriceSpan.textContent = totalPrice.toFixed(2);
+        }
+
+        function removeOne(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1); // Remove the item if quantity is 1
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function addOne(index) {
+            cart[index].quantity += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
         }
 
         function removeItem(index) {
@@ -63,6 +92,10 @@
         }
 
         displayCart();
+    </script>
+    <script src="script.js"></script>
+    <script>
+        appendHeader(document.getElementById('header-container'));
     </script>
 </body>
 </html>

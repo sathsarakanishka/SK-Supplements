@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SK Supplements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main class="contact-page">
+        <h1>Contact Us</h1>
+        <section class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>
+                    Have questions or need assistance? We're here to help! Reach out to us via phone, email, 
+                    or visit our office.
+                </p>
+                <ul>
+                    <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+                    <li><strong>Email:</strong> info@sksupplements.com</li>
+                    <li><strong>Address:</strong> 123 Fitness St, Health City, HC 12345</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        appendHeader(document.getElementById('header-container'));
+    </script>
+</body>
+</html>

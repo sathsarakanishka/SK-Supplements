@@ -2,12 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const mobileNavMenu = document.querySelector('.mobile-bottom-nav');
 
+    // Toggle mobile navigation menu
     if (hamburger && mobileNavMenu) {
         hamburger.addEventListener('click', () => {
             mobileNavMenu.classList.toggle('active');
         });
     }
 
+    // Toggle dropdown for products in mobile view
     const productLink = document.querySelector('.mobile-bottom-nav ul li a[href="pages/product.html"]');
     const dropdown = document.querySelector('.mobile-bottom-nav .dropdown');
 
@@ -19,9 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Function to create the header
 function createHeader() {
     const header = document.createElement('header');
 
+    // Desktop navigation
     const nav = document.createElement('nav');
     nav.innerHTML = `
         <div class="top-nav">
@@ -79,6 +83,7 @@ function createHeader() {
     `;
     header.appendChild(nav);
 
+    // Mobile navigation
     const mobileNav = document.createElement('nav');
     mobileNav.className = 'mobile-nav-bar';
     mobileNav.innerHTML = `
@@ -100,10 +105,10 @@ function createHeader() {
             <ul>
                 <li>
                     <form class="search-box">
-                            <input type="text" placeholder="Search Here" required>
-                            <button class="search-btn" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                        <input type="text" placeholder="Search Here" required>
+                        <button class="search-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
                 </li>
                 <li><a href="Sign up.html"><i class="fa-solid fa-user"></i></a></li>
@@ -111,28 +116,30 @@ function createHeader() {
             </ul>
         </div>
         <div class="mobile-bottom"></div>
-            <div class="mobile-bottom-nav" id="navMenu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        <ul class="dropdown">
-                            <li><a href="product.html">ALL Products</a></li>
-                            <li><a href="product.html#Creatine">Creatine</a></li>
-                            <li><a href="product.html#Protine">Protine</a></li>
-                            <li><a href="product.html#Pre-Workout">Pre-Workout</a></li>
-                            <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </div>
+        <div class="mobile-bottom-nav" id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="product.html">ALL Products</a></li>
+                        <li><a href="product.html#Creatine">Creatine</a></li>
+                        <li><a href="product.html#Protine">Protine</a></li>
+                        <li><a href="product.html#Pre-Workout">Pre-Workout</a></li>
+                        <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
     `;
     header.appendChild(mobileNav);
 
     return header;
 }
 
+// Function to append the header to the container
 function appendHeader(container = document.body) {
     const header = createHeader();
     container.appendChild(header);
+    updateCartCount(); // Ensure the cart count is updated when the header is appended
 }

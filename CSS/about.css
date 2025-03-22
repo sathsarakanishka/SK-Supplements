@@ -1,0 +1,94 @@
+/* About Page Styles */
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-page h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team {
+    margin-top: 40px;
+}
+
+.team h2 {
+    font-size: 28px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #666;
+}
