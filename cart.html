@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SK Supplements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+        <a href="index.html">Back to Shop</a>
+    </header>
+
+    <section id="cart-items"></section>
+    <div id="cart-total">
+        <h3>Total: $<span id="total-price">0.00</span></h3>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function displayCart() {
+            const cartItemsDiv = document.getElementById("cart-items");
+            const totalPriceSpan = document.getElementById("total-price");
+            let totalPrice = 0;
+
+            cartItemsDiv.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+                totalPriceSpan.textContent = "0.00";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                cartItemsDiv.innerHTML += `
+                    <div class="cart-item">
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price} | Quantity: ${item.quantity}</p>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+            });
+
+            totalPriceSpan.textContent = totalPrice.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function checkout() {
+            alert("Thank you for your purchase!");
+            cart = [];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>
