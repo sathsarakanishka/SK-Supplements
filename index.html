@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Supplements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/mobile.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section id="hero">
+            <div class="hero"></div>
+        </section>
+        <section class="categories">
+            <h2>Top Categories</h2>
+            <div class="category-grid">
+                <div class="category-item"><button class="TC">Creatine</button></div>
+                <div class="category-item"><button>Fat Burners</button></div>
+                <div class="category-item"><button>Mass Gainers</button></div>
+                <div class="category-item"><button>Multivitamins</button></div>
+                <div class="category-item"><button>Pre Workout</button></div>
+                <div class="category-item"><button>Protein</button></div>
+            </div>
+        </section>
+        <section class="best-products">
+            <h2>Best Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    LEVRONE GOLD CREATINE
+                    <button class="add-to-cart" data-name="LEVRONE GOLD CREATINE" data-price="20">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    Core Champs Multivitamin
+                    <button class="add-to-cart" data-name="Core Champs Multivitamin" data-price="20">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    REDCON1 Total War
+                    <button class="add-to-cart" data-name="REDCON1 Total War" data-price="20">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    Scitec 100% Whey
+                    <button class="add-to-cart" data-name="Scitec 100% Whey" data-price="20">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/cart.js"></script>
+    <script>
+        appendHeader(document.getElementById('header-container'));
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

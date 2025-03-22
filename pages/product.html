@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - SK Supplements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/Product.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section class="product-grid">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <h3>LEVRONE GOLD CREATINE</h3>
+                    <p class="price">$20.00</p>
+                    <p class="description">High-quality creatine monohydrate for enhanced muscle performance and recovery.</p>
+                    <button class="add-to-cart" data-name="LEVRONE GOLD CREATINE" data-price="20">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <h3>Core Champs Multivitamin</h3>
+                    <p class="price">$25.00</p>
+                    <p class="description">A complete multivitamin formula to support overall health and wellness.</p>
+                    <button class="add-to-cart" data-name="Core Champs Multivitamin" data-price="25">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <h3>REDCON1 Total War</h3>
+                    <p class="price">$30.00</p>
+                    <p class="description">A powerful pre-workout supplement to boost energy and focus.</p>
+                    <button class="add-to-cart" data-name="REDCON1 Total War" data-price="30">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <h3>Scitec 100% Whey</h3>
+                    <p class="price">$35.00</p>
+                    <p class="description">Premium whey protein for muscle growth and recovery.</p>
+                    <button class="add-to-cart" data-name="Scitec 100% Whey" data-price="35">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <h3>Optimum Nutrition Fish Oil</h3>
+                    <p class="price">$15.00</p>
+                    <p class="description">Supports heart health and joint function with omega-3 fatty acids.</p>
+                    <button class="add-to-cart" data-name="Optimum Nutrition Fish Oil" data-price="15">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <h3>MuscleTech NitroTech</h3>
+                    <p class="price">$40.00</p>
+                    <p class="description">Whey protein with creatine for muscle building and strength.</p>
+                    <button class="add-to-cart" data-name="MuscleTech NitroTech" data-price="40">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        appendHeader(document.getElementById('header-container'));
+    </script>
+</body>
+</html>
