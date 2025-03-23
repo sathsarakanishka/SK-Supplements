@@ -66,7 +66,8 @@ function createHeader() {
                             <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
                         </ul>
                     </li> 
-                    <li><a href="">Contact</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
+                    <li><a href="../pages/about.html">About Us</a></li>
                 </ul>
             </div>
             <div class="mid-nav-right">
@@ -121,14 +122,15 @@ function createHeader() {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="product.html">Products <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     <ul class="dropdown">
-                        <li><a href="product.html">ALL Products</a></li>
+                        <li><a href="product.html">All Products</a></li>
                         <li><a href="product.html#Creatine">Creatine</a></li>
                         <li><a href="product.html#Protine">Protine</a></li>
                         <li><a href="product.html#Pre-Workout">Pre-Workout</a></li>
                         <li><a href="product.html#Multivitamin">Multi-Viamins</a></li>
                     </ul>
                 </li>
-                <li><a href="">Contact</a></li>
+                <li><a href="../pages/contact.html">Contact Us</a></li>
+                <li><a href="../pages/about.html">About Us</a></li>
             </ul>
         </div>
     `;

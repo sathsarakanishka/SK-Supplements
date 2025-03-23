@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/mobile.css">
     <link rel="stylesheet" href="/CSS/footer.css">
 </head>
-<body background="images/29e258148379789.62d4fe5d6d7d8.jpg">
+<body>
+    <div id="header-container"></div>
     <div class="container">
         <h2>Sign Up</h2>
         <form>
@@ -34,5 +35,11 @@
         </form>
     </div>
     <script src="scripts.js"></script>
+    <script>
+        appendHeader(document.getElementById('header-container'));
+    </script>
+    <script>
+        appendFooter(); // Appends the footer to the body
+    </script>
 </body>
 </html>
