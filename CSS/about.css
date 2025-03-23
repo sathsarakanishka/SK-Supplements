@@ -1,4 +1,12 @@
-/* About Page Styles */
+body{
+    background-image: url("/images/bg/Untitled-design-40.webp");
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    align-items: center;
+}
 .about-page {
     max-width: 1200px;
     margin: 0 auto;
@@ -51,6 +59,7 @@
     font-size: 28px;
     color: #e74c3c;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .team-members {
@@ -91,4 +100,15 @@
 .team-member p {
     font-size: 16px;
     color: #666;
+}
+.about-page{
+    justify-content: center;
+    margin: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0px, 6px 20px rgba(0, 0, 0, 0.4);
+    width: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }

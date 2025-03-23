@@ -18,13 +18,12 @@
         color: white;
         font-size: 14px;
         margin: 0;
-        justify-content: center;
+        text-align: center;
         font-weight: bold;
     }
 
     .mobile-top-p a {
         color: rgb(250, 212, 40);
-        text-decoration: underline;
         font-weight: bolder;
         font-size: 14px;
     }

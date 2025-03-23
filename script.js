@@ -113,7 +113,7 @@ function createHeader() {
                     </form>
                 </li>
                 <li><a href="pages/Sign up.html"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="cart.html" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i>(<span id="cart-count">0</span>)</a></li>
+                <li><a href="cart.html" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span></a></li>
             </ul>
         </div>
         <div class="mobile-bottom"></div>
