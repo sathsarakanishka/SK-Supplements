@@ -18,7 +18,6 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
         // Save the updated cart to localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount(); // Update the cart count in the UI
-        alert(`${itemName} has been added to your cart!`);
     });
 });
 

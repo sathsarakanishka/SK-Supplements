@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SK Supplements</title>
-    <link rel="stylesheet" href="../CSS/about.css">
+    <title>SK Supplements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/mobilenavbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
     <!-- Header Navigation Bar -->
@@ -114,42 +115,61 @@
             </div>
         </nav>
     </header>
-    <main class="about-page">
-        <h1>About Us</h1>
-        <section class="about-content">
-            <div class="about-text">
-                <h2>Who We Are</h2>
-                <p>
-                    SK Supplements is a leading provider of high-quality fitness and nutritional supplements. 
-                    Our mission is to help you achieve your fitness goals by offering the best products on the market.
-                </p>
-                <p>
-                    Founded in 2020, we have grown to become a trusted name in the fitness community. 
-                    Our team is passionate about health and wellness, and we are committed to providing 
-                    you with the tools you need to succeed.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="images/about-us.jpg" alt="About Us">
-            </div>
+
+    <main>
+        <section id="hero">
+            <div class="hero"></div>
         </section>
-        <section class="team">
-            <h2>Our Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="images/team1.jpg" alt="Team Member 1">
-                    <h3>John Doe</h3>
-                    <p>CEO & Founder</p>
+        <section class="best-products">
+            <h2>Best Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="../images/protine/ISO-100-5-LBS-240x274.jpg" alt="ISO 100">
+                    <h3>ISO 100</h3>
+                    <p class="price">LKR 6,400.00</p>
+                    <button class="add-to-cart" data-name="ISO 100" data-price="6400">Add to Cart</button>
                 </div>
-                <div class="team-member">
-                    <img src="images/team2.jpg" alt="Team Member 2">
-                    <h3>Jane Smith</h3>
-                    <p>Head of Product Development</p>
+                <div class="product-item">
+                    <img src="../images/protine/Scitec-100-Whey-Professional-78-Servings.jpg.webp" alt="Scitec 100% Whey">
+                    <h3>Scitec 100% Whey</h3>
+                    <p class="price">LKR 11,200.00</p>
+                    <button class="add-to-cart" data-name="Scitec 100% Whey" data-price="11200">Add to Cart</button>
                 </div>
-                <div class="team-member">
-                    <img src="images/team3.jpg" alt="Team Member 3">
-                    <h3>Mike Johnson</h3>
-                    <p>Marketing Director</p>
+                <div class="product-item">
+                    <img src="../images/protine/Nitrotech-100-Whey-Gold-5-LBS-240x274.jpg" alt="MuscleTech NitroTech">
+                    <h3>MuscleTech NitroTech</h3>
+                    <p class="price">LKR 12,800.00</p>
+                    <button class="add-to-cart" data-name="MuscleTech NitroTech" data-price="12800">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="../images/protine/Gold-Standard-Whey-5-LBS-240x274.jpg" alt="Optimum Nutrition Gold Standard">
+                    <h3>Optimum Nutrition Gold Standard</h3>
+                    <p class="price">LKR 14,400.00</p>
+                    <button class="add-to-cart" data-name="Optimum Nutrition Gold Standard" data-price="14400">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="../images/creatine/Gold-Creatine-300-g-300x300.jpg.webp" alt="Gold-Creatine">
+                    <h3>Gold-Creatine</h3>
+                    <p class="price">LKR 5,760.00</p>
+                    <button class="add-to-cart" data-name="Gold-Creatine" data-price="5760">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="../images/creatine/Inner-armor-Creatine-400-g-430x430.jpg.webp" alt="Inner Armor">
+                    <h3>Inner Armor</h3>
+                    <p class="price">LKR 7,040.00</p>
+                    <button class="add-to-cart" data-name="Inner Armor" data-price="7040">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="../images/creatine/Creatines-768x768.png.webp" alt="Applied-Nutrition-Creatine Monohydrate">
+                    <h3>Applied-Nutrition-Creatine Monohydrate</h3>
+                    <p class="price">LKR 8,000.00</p>
+                    <button class="add-to-cart" data-name="Applied-Nutrition-Creatine Monohydrate" data-price="8000">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="../images/pre/Total-war-30-Servings-430x430.jpg.webp" alt="REDCON1 Total War">
+                    <h3>REDCON1 Total War</h3>
+                    <p class="price">LKR 9,600.00</p>
+                    <button class="add-to-cart" data-name="REDCON1 Total War" data-price="9600">Add to Cart</button>
                 </div>
             </div>
         </section>
@@ -168,12 +188,10 @@
                     <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
             </div>
-
-            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="quick-links">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="product.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -197,6 +215,11 @@
             <p>&copy; 2023 SK Supplements. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="../js/script.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        updateCartCount(); // Ensure the cart count is updated when the page loads
+    </script>
 </body>
 </html>
