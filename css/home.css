@@ -9,17 +9,44 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     padding: 30px;
+    width:  100%;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
+.product-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
@@ -27,22 +54,17 @@ body {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .product-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 15px;
         padding: 10px;
     }
-}
-
-.product-item {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    .product-item {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
 
 .product-item:hover {
@@ -82,8 +104,18 @@ main {
 }
 
 h2 {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;   
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px; 
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+    padding: 10px;
+
 }
 
 .categories, .best-products {

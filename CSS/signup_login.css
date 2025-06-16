@@ -25,6 +25,8 @@ body{
     width: 400px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 100px;
+    
 }
 h2{
     color: white;
