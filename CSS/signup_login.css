@@ -3,12 +3,11 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/images/bg/Untitled-design-40.webp");
+    background-image: url("../images/bg/Untitled-design-40.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-size: 100%;
 
 }
 *{

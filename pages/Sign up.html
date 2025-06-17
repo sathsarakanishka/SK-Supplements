@@ -2,36 +2,127 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up From</title>
+    <title>Sign Up Form</title>
     <link rel="stylesheet" href="../css/signup_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .error-message {
+            color: #ff4444;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+        .input-group.error input {
+            border-color: #ff4444;
+        }
+    </style>
 </head>
 <body background="../images/bg/29e258148379789.62d4fe5d6d7d8.jpg">
     <div class="container">
-        <h2>Sign Up</h2>
-        <form>
-            <div class="input-group">
-                <input type="text" placeholder="Full Name" required>
+        <h2 class="mb-4">Sign Up</h2>
+        
+        <?php if (isset($_SESSION['registration_errors'])): ?>
+            <div class="error-message" style="color: #ff4444; margin-bottom: 15px;">
+                <?php foreach ($_SESSION['registration_errors'] as $error): ?>
+                    <p><?php echo htmlspecialchars($error); ?></p>
+                <?php endforeach; ?>
+                <?php unset($_SESSION['registration_errors']); ?>
             </div>
-            <div class="input-group">
-                <input type="email" placeholder="Emai Address" required>
+        <?php endif; ?>
+        
+        <form id="registrationForm" method="post" action="RegistrationHandler.php" onsubmit="return validateForm()">
+            <div class="input-group" id="firstNameGroup">
+                <input type="text" name="firstname" placeholder="First Name" required>
+                <div class="error-message" id="firstNameError"></div>
             </div>
-            <div class="input-group">
-                <input type="tel" placeholder="Mobile number" required>
+            <div class="input-group" id="lastNameGroup">
+                <input type="text" name="lastname" placeholder="Last Name" required>
+                <div class="error-message" id="lastNameError"></div>
             </div>
-            <div class="input-group">
-                <input type="password" placeholder="Enter  password" required>
+            <div class="input-group" id="usernameGroup">
+                <input type="text" name="username" placeholder="User Name" required>
+                <div class="error-message" id="usernameError"></div>
             </div>
-            <div class="input-group">
-                <input type="password" placeholder="Confirm password" required>
+            <div class="input-group" id="emailGroup">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="input-group" id="phoneGroup">
+                <input type="tel" name="mobile" placeholder="Mobile number" required>
+                <div class="error-message" id="phoneError"></div>
+            </div>
+            <div class="input-group" id="passwordGroup">
+                <input type="password" name="password" id="password" placeholder="Enter password" required>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="input-group" id="confirmPasswordGroup">
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+                <div class="error-message" id="confirmPasswordError"></div>
             </div>
             <button type="submit" class="button">Sign Up</button>
-            <br>
-            <br>
-            <p>Don't have an account? <a href="login.html">Sign in</a></p>
-            <P><a href="../pages/home.html">Go Back to Home</a></P>
+            <br><br>
+            <p>Already have an account? <a href="login.html">Sign in</a></p>
+            <p><a href="../pages/home.html">Go Back to Home</a></p>
         </form>
     </div>
-    <script src="../js/scripts.js"></script>
+    
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            // Reset errors
+            document.querySelectorAll('.input-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+            });
+            
+            // Validate username
+            const username = document.querySelector('input[name="username"]').value.trim();
+            if (username.length < 4) {
+                document.getElementById('usernameError').textContent = 'Username must be at least 4 characters';
+                document.getElementById('usernameGroup').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                document.getElementById('emailGroup').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate phone
+            const phone = document.querySelector('input[name="mobile"]').value.trim();
+            const phoneRegex = /^[0-9]{10,15}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Please enter a valid phone number';
+                document.getElementById('phoneGroup').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate password
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').textContent = 
+                    'Password must be at least 8 characters with 1 letter, 1 number, and 1 special character';
+                document.getElementById('passwordGroup').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate password confirmation
+            const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                document.getElementById('confirmPasswordGroup').classList.add('error');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+    </script>
 </body>
 </html>
