@@ -29,7 +29,7 @@
             </div>
         <?php endif; ?>
         
-        <form id="registrationForm" method="post" action="RegistrationHandler.php" onsubmit="return validateForm()">
+        <form id="registrationForm" method="post" action="Sign up.php" onsubmit="return validateForm()">
             <div class="input-group" id="firstNameGroup">
                 <input type="text" name="firstname" placeholder="First Name" required>
                 <div class="error-message" id="firstNameError"></div>
@@ -58,7 +58,7 @@
                 <input type="password" name="confirm_password" placeholder="Confirm password" required>
                 <div class="error-message" id="confirmPasswordError"></div>
             </div>
-            <button type="submit" class="button">Sign Up</button>
+            <button type="submit" class="button" name="singup">Sign Up</button>
             <br><br>
             <p>Already have an account? <a href="login.html">Sign in</a></p>
             <p><a href="../pages/home.html">Go Back to Home</a></p>

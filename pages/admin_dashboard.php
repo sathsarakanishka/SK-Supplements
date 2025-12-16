@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 // Verify admin privileges
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
@@ -12,32 +9,29 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 }
 
 // Database connection
-require_once 'db_connection.php';
+include ('db_connection.php');
 
 // Get stats for dashboard
-try {
+
     // User count
-    $stmt = $pdo->query("SELECT COUNT(*) as user_count FROM users");
-    $userCount = $stmt->fetch()['user_count'];
-    
+    $sql = "SELECT COUNT(*) as user_count FROM users";
+    $userCount = mysqli_query($con,$sql);
+
+
     // Product count
-    $stmt = $pdo->query("SELECT COUNT(*) as product_count FROM products");
-    $productCount = $stmt->fetch()['product_count'];
+    $sql = "SELECT COUNT(*) as product_count FROM products";
+    $productCount = mysqli_query($con,$sql);
     
     // Order count
-    $stmt = $pdo->query("SELECT COUNT(*) as order_count FROM orders");
-    $orderCount = $stmt->fetch()['order_count'];
+    $sql = "SELECT COUNT(*) as order_count FROM orders";
+    $orderCount = mysqli_query($con,$sql);
     
     // Recent orders
-    $stmt = $pdo->query("SELECT o.id, u.username as user_name, o.total_amount, o.created_at 
+    $sql = "SELECT o.id, u.username as user_name, o.total_amount, o.created_at 
                          FROM orders o JOIN users u ON o.user_id = u.id 
-                         ORDER BY o.created_at DESC LIMIT 5");
-    $recentOrders = $stmt->fetchAll();
-} catch (PDOException $e) {
-    $error = "Failed to load dashboard data: " . $e->getMessage();
-    error_log("Dashboard error: " . $e->getMessage());
-    $recentOrders = [];
-}
+                         ORDER BY o.created_at DESC LIMIT 5";
+    $recentOrders = mysqli_query($con,$sql);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,7 +73,8 @@ try {
                 <i class="fas fa-chart-line"></i>
                 <h3>LKR <?php 
                     $stmt = $pdo->query("SELECT SUM(total_amount) as revenue FROM orders");
-                    echo number_format($stmt->fetch()['revenue'] ?? 0, 2); 
+                    $sql = "SELECT SUM(total_amount) as revenue FROM orders";
+                    echo number_format(mysqli_query($con,$sql)->fetch_assoc()['revenue'] ?? 0, 2); 
                 ?></h3>
                 <p>Total Revenue</p>
             </div>
